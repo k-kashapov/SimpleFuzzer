@@ -1,5 +1,7 @@
 # SimpleFuzzer
 
+Simple fuzzer made for testing course at MIPT. Uses LLVM's guards to track coverage. Implements some basic mutations on data.
+
 ## Build
 
 ```
@@ -14,6 +16,7 @@ clang++ tester.cpp user.o -o fuzzer.elf -gdwarf-2
 2. Provide entry point with signature `extern "C" int FuzzerTestOneInput(const unsigned char *data, unsigned long len)`;
 3. Compile with `make`
 4. Run with `./fuzzer.elf`
+5. Optionally, directory with corpus may be provided as 1st argument. In this case the fuzzer will start with the provided corpus as initial.
 
 ## Example output
 
